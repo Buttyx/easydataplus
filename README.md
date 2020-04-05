@@ -67,7 +67,7 @@ GET https://us-central1-versusvirus-273113.cloudfunctions.net/webApi/case/<caseI
 ### Read all records for a specific canton
 ```bash
 Authorization: Bearer eyJhb....F1Y9RkqriG23g
-GET https://us-central1-versusvirus-273113.cloudfunctions.net/webApi/cases/<cantonId
+GET https://us-central1-versusvirus-273113.cloudfunctions.net/webApi/cases/<cantonId>
 ```
 ### Update a record with a specific id
 ```bash
