@@ -7,6 +7,7 @@ Project for the #versusvirus Hackathon
 3. "Image Upload" enables you to upload reports as an image or pdf, which will instantly get forwarded to the database and asynchronously processed by the OCR service, running on the cloud.
 4. You can also pick the "Webform" option to quickly fill out the report manually which, after saving the inputs, will be directly forwarded.
 5. The "Statistics" option will show you additional aggregated information by querying the database (in progress).
+
 We note here that we kept the UI simple to make the process of submitting a report as straightforward as possible.
 
 # Using the API
