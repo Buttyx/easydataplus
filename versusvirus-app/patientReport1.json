@@ -1,0 +1,61 @@
+{
+	"patient": {
+		"ahvnr": "756.1234.5678.97",
+		"kanton": "ZH",
+		"geschlecht": "w"
+	},
+	"manifestation": {
+		"fieber": true,
+		"husten": false,
+		"atembeschwerden": true,
+		"pneumonie": false,
+		"ards": false,
+		"durchfall": true,
+		"andereSymptome": "schnupfen",
+		"keineSymptome": false,
+		"manifestationsBeginn": "2020-02-16"
+	},
+	"grunderkrankung": {
+		"diabetes": false,
+		"herzKreislauf": true,
+		"immunsuppression": true,
+		"hypertonie": false,
+		"chronischeAtemwegserkrankung": true,
+		"krebs": false,
+		"keineGrunderkrankung": false,
+		"andereGrunderkrankung": "keine"
+	},
+	"verlauf": {
+		"hospitalisierung": false,
+		"ipsAufenthalt": false,
+		"beatmung": false,
+		"tod": false,
+		"todesDatum": null,
+		"spital": "Kantonsspital Zürich"
+	},
+	"exposition": {
+		"ch": true,
+		"ausland": true,
+		"ort": "Wuhan, Bern",
+		"unbekannt": false,
+		"expositionDatum": "2020-02-05",
+		"wie": {
+			"kontaktZuCovidPositiv": true,
+			"kontaktUnbekannt": false,
+			"familie": true,
+			"medizinPflegePersonal": false,
+			"schule": false,
+			"arbeit": false,
+			"andere": ""
+		},
+		"reisetaetigkeit": true,
+		"medizinPflegePersonal": false
+	},
+	"labor": {
+		"laborGenf": true,
+		"anderesLabor": false,
+		"entnahmeDatum": "2020-03-20"
+	},
+	"bemerkungen": "Patient befindet sich in gutem Zustand.",
+	"status": "In Bearbeitung"
+}

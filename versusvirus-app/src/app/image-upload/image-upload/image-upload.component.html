@@ -1,0 +1,42 @@
+ <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="20px" style="height:500px">
+    <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="20px">
+        <input #fileInput
+        style="display: none"
+        type="file" (change)="onFileChanged($event)"
+        onclick="this.value = null">
+            <div>
+                <p class="mat-body">Klicken Sie bitte auf das Symbol um ein Formular als Bild oder PDF hochzuladen.</p> 
+            </div>
+            <div>
+                <mat-card style="cursor: pointer" (click)="fileInput.click()" class="card">
+                <mat-card-title></mat-card-title>
+                <mat-card-content>
+                    <mat-icon style="transform: scale(2);">publish</mat-icon>
+                </mat-card-content>
+                </mat-card>
+            </div>
+    </div>
+
+
+    <div style="width:60px;height:60px">
+        <mat-progress-spinner *ngIf="showProgress" [value]="uploadProgress" color="darkgrey" strokeWidth="10" diameter="60"></mat-progress-spinner>
+        <!-- <mat-progress-bar *ngIf="!showProgress" color="black" [value]="uploadProgress"></mat-progress-bar> -->
+    </div>
+    
+     <div fxLayout="column" fxLayoutAlign="space-evenly start" style="width: 30%">
+       <div style="width:100%; text-align: center"><label class="mat-h1">Verlauf</label></div>
+        <div>
+            <div>
+                <p class="mat-body" *ngIf="selectedFile !== undefined && showProgress">{{selectedFile.name}}</p>
+            </div>
+            <div>
+                <!-- <mat-progress-spinner *ngIf="showProgress" [value]="uploadProgress" color="darkgrey" strokeWidth="3" diameter="18"></mat-progress-spinner> -->
+                <!-- <mat-progress-bar *ngIf="!showProgress" color="black" [value]="uploadProgress"></mat-progress-bar> -->
+            </div>
+        </div>
+        <div *ngFor= "let file of loadedFiles" fxLayout="row" fxLayoutAlign="space-between center" class="fileitem">
+            <p  class="mat-body" style="cursor: pointer" (click)= "redirect('webform')">{{file}}</p>
+            <mat-icon class="check_box" style="transform: scale(0.9);">check_circle</mat-icon>
+        </div>
+     </div>
+ </div>

@@ -1,0 +1,42 @@
+<div class="app" fxLayout="column">
+<mat-sidenav-container>
+  <mat-sidenav  #sidenav role="navigation">
+    <mat-nav-list>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div>
+        <button mat-icon-button (click)="redirect('start')">
+          <mat-icon>home</mat-icon>
+        </button>
+      </div>
+      <div>
+          EasyData <img src="../assets/swissFlag.png" height="20px" style="vertical-align: middle"/>
+      </div>
+      <div fxFlex fxLayout="row" fxLayoutAlign="end"  fxHide.xs>
+        <app-login></app-login>
+      </div>
+    </mat-toolbar>
+    <main>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<div id="main" fxFlex="90%" fxLayout="column" fxLayoutAlign="center">
+<!--<app-start></app-start>-->
+<router-outlet></router-outlet>
+</div>
+
+  <div class="footer" fxLayout="row" fxLayoutAlign="space-around center">
+    <img src="../assets/easydata_v1.png" height="40px"/>
+    <img src="../assets/versusvirus.png" height="40px"/>
+    <div style="height:90%;width:400px" class="mat-body">
+      <p style="font-size:8pt"><span style="font-weight: bold">Contributors:</span> Young Ban, Xavier Butty, Sandra Dünki, Vanessa Hunziker, Tamara Rahimi, Christian Sanabria, Thomas Steinmann, Felipe Sulser, Julia Valder</p></div>
+  </div>
+
+</div>
+
+
+
+

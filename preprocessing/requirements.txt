@@ -1,0 +1,9 @@
+firebase_admin
+scikit-image
+google-cloud-storage
+opencv-python==4.2.0.32
+pytesseract
+numpy
+matplotlib
+imutils
+

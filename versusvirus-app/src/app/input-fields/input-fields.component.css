@@ -1,0 +1,16 @@
+mat-card{
+  margin:20px 20px 0px 20px;
+}
+
+.savebtn {
+margin: 20px;
+width: 100px;
+}
+
+.mat-checkbox{
+margin-right:15px;
+}
+
+.mat-form-field{
+margin-right: 15px;
+}

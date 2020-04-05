@@ -1,0 +1,182 @@
+<div fxLayout="column" fxLayoutAlign="space-around">
+<mat-card>
+  <mat-card-title>Patienten Angaben</mat-card-title>
+  <section>
+  <mat-form-field class="example-full-width">
+    <mat-label>AHV Nr.</mat-label>
+    <input matInput color="primary" [(ngModel)]="report.patient.ahvnr">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Kanton</mat-label>
+    <input type="text"
+           matInput
+           color="primary" [(ngModel)]="report.patient.kanton"
+           [matAutocomplete]="autoKanton">
+    <mat-autocomplete #autoKanton="matAutocomplete">
+      <mat-option *ngFor="let option of optionsKanton" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Geschlecht</mat-label>
+    <input type="text"
+           matInput
+           color="primary" [(ngModel)]="report.patient.geschlecht"
+           [matAutocomplete]="autoGeschlecht">
+    <mat-autocomplete #autoGeschlecht="matAutocomplete">
+      <mat-option *ngFor="let option of optionsGeschlecht" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  </section>
+</mat-card>
+
+<mat-card>
+<mat-card-title>Manifestation</mat-card-title>
+  <section>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.manifestation.keineSymptome">Keine Symptome</mat-checkbox>
+  </section>
+  <section>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.manifestation.fieber">Fieber</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.manifestation.husten">Husten</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.manifestation.atembeschwerden">Atembeschwerden</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.manifestation.pneumonie">Pneumonie</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.manifestation.ards">Ards</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.manifestation.durchfall">Durchfall</mat-checkbox>
+  </section>
+  <section>
+    <mat-form-field class="example-full-width">
+      <mat-label>Andere Symptome</mat-label>
+      <input matInput color="primary" [(ngModel)]="report.manifestation.andereSymptome">
+    </mat-form-field>
+  </section>
+  <section>
+    <mat-form-field>
+      <mat-label>Begin Manifestation</mat-label>
+      <input matInput  [(ngModel)]="report.manifestation.manifestationsBeginn" color="primary" [matDatepicker]="pickerManifestation" >
+      <mat-datepicker-toggle matSuffix [for]="pickerManifestation"></mat-datepicker-toggle>
+      <mat-datepicker #pickerManifestation></mat-datepicker>
+    </mat-form-field>
+  </section>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Grunderkrankungen</mat-card-title>
+  <section>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.grunderkrankung.keineGrunderkrankung">Keine Grunderkrankung</mat-checkbox>
+  </section>
+  <section>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.grunderkrankung.diabetes">Diabetes</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.grunderkrankung.herzKreislauf">HerzKreislauf</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.grunderkrankung.immunsuppression">Immunsuppression</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.grunderkrankung.hypertonie">Hypertonie</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.grunderkrankung.chronischeAtemwegserkrankung">Chronische Atemwegserkrankung</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.grunderkrankung.krebs">Krebs</mat-checkbox>
+  </section>
+  <section>
+    <mat-form-field class="example-full-width">
+      <mat-label>Andere Grunderkrankungen</mat-label>
+      <input matInput color="primary" [(ngModel)]="report.grunderkrankung.andereGrunderkrankung">
+    </mat-form-field>
+  </section>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Verlauf</mat-card-title>
+  <section>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.verlauf.hospitalisierung">Hospitalisierung</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.verlauf.ipsAufenthalt">IPS Aufenthalt</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.verlauf.beatmung">Beatmung</mat-checkbox>
+  </section>
+  <section>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.verlauf.tod">Verstorben</mat-checkbox>
+    <mat-form-field>
+      <mat-label>Todesdatum</mat-label>
+      <input matInput color="primary" [matDatepicker]="pickerTod" [(ngModel)]="report.verlauf.todesDatum">
+      <mat-datepicker-toggle matSuffix [for]="pickerTod"></mat-datepicker-toggle>
+      <mat-datepicker #pickerTod></mat-datepicker>
+    </mat-form-field>
+  </section>
+  <section>
+    <mat-form-field class="example-full-width">
+      <mat-label>Spital</mat-label>
+      <input matInput color="primary" [(ngModel)]="report.verlauf.spital">
+    </mat-form-field>
+  </section>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Exposition</mat-card-title>
+  <mat-card-subtitle>Wo</mat-card-subtitle>
+  <section>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.exposition.ch">Schweiz</mat-checkbox>
+    <mat-form-field class="example-full-width">
+      <mat-label>Anderes Land</mat-label>
+      <input matInput color="primary" [(ngModel)]="report.exposition.ausland">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Ort</mat-label>
+      <input matInput color="primary" [(ngModel)]="report.exposition.ort">
+    </mat-form-field>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.exposition.unbekannt">Ansteckungsort Unbekannt</mat-checkbox>
+  </section>
+  <section>
+    <mat-form-field>
+      <mat-label>Datum Exposition</mat-label>
+      <input matInput color="primary" [matDatepicker]="pickerExposition" [(ngModel)]="report.exposition.expositionDatum">
+      <mat-datepicker-toggle matSuffix [for]="pickerExposition"></mat-datepicker-toggle>
+      <mat-datepicker #pickerExposition></mat-datepicker>
+    </mat-form-field>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.exposition.reisetaetigkeit">Verreist</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.exposition.medizinPflegePersonal">Medizinisches Pflegepersonal</mat-checkbox>
+  </section>
+  <mat-card-subtitle>Wie</mat-card-subtitle>
+  <section>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.exposition.wie.kontaktZuCovidPositiv">Kontakt zu bestätigtem Covid-19 Fall </mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.exposition.wie.kontaktUnbekannt">Unbekannter Kontakt</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.exposition.wie.familie">Familie</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.exposition.wie.medizinPflegePersonal">Medizinisches Pflegepersonal</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.exposition.wie.schule">Schule</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.exposition.wie.arbeit">Arbeit</mat-checkbox>
+  </section>
+  <section>
+    <mat-form-field class="example-full-width">
+      <mat-label>Andere Expositionen</mat-label>
+      <input matInput color="primary" [(ngModel)]="report.exposition.wie.andere">
+    </mat-form-field>
+  </section>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Labor</mat-card-title>
+  <section>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.labor.laborGenf">Labor Genf</mat-checkbox>
+    <mat-checkbox class="example-margin" color="primary" [(ngModel)]="report.labor.anderesLabor">Anderes Labor</mat-checkbox>
+  </section>
+  <section>
+    <mat-form-field>
+      <mat-label>Datum Entnahme</mat-label>
+      <input matInput color="primary" [matDatepicker]="pickerEntnahme" [(ngModel)]="report.labor.entnahmeDatum">
+      <mat-datepicker-toggle matSuffix [for]="pickerEntnahme"></mat-datepicker-toggle>
+      <mat-datepicker #pickerEntnahme></mat-datepicker>
+    </mat-form-field>
+  </section>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Sonstiges</mat-card-title>
+  <section>
+    <mat-form-field appearance="fill">
+      <mat-label>Bemerkungen</mat-label>
+      <textarea matInput color="primary" [(ngModel)]="report.bemerkungen"></textarea>
+    </mat-form-field>
+  </section>
+</mat-card>
+
+    <button mat-raised-button class="savebtn" color="primary" (click)="onReportSaved()">Speichern</button>
+
+</div>
+
+

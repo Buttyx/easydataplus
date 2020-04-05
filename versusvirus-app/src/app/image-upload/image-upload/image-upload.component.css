@@ -1,0 +1,46 @@
+:host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {   
+    stroke: grey;
+}
+
+
+
+.check_box{
+    color: lightgreen;
+
+}
+
+h4 {
+    margin: 0;
+}
+
+div.item {
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+}
+img {
+    color: white;
+    width: 100px;
+    height: 100px;
+}
+.caption {
+    display: block;
+}
+
+.icon {
+    height: 100px;
+    }
+    
+.card{
+width: 200px;
+text-align: center;
+}
+
+p{
+    margin:0;
+}
+
+.fileitem{
+width:100%
+}
