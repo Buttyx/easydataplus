@@ -16,10 +16,13 @@ Project for the #versusvirus Hackathon
 ![](manuelupload.gif)
 
 5. The "Statistics" option will show you additional aggregated information by querying the database (in progress).
+
 ![](statistics.gif)
 
 
 6. To return to the three options you can always click on the house icon on the navgiation bar in the top left corner.
+
+![](home.gif)
 
 We note here that we kept the UI simple to make the process of submitting a report as straightforward as possible.
 
