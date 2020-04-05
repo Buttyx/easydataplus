@@ -6,7 +6,10 @@ Project for the #versusvirus Hackathon
 2. After login in using the information you just provided, you will see three options: "Image Upload", "Webform" and "Statistics".
 
 ![](login.gif)
+
 3. "Image Upload" enables you to upload reports as an image or pdf, which will instantly get forwarded to the database and asynchronously processed by the OCR service, running on the cloud.
+![](fileupload.gif)
+
 4. You can also pick the "Webform" option to quickly fill out the report manually which, after saving the inputs, will be directly forwarded.
 5. The "Statistics" option will show you additional aggregated information by querying the database (in progress).
 6. To return to the three options you can always click on the house icon on the navgiation bar in the top left corner.
